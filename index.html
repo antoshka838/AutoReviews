@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoReviews - Отзывы об автомобилях</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Auto<span>Reviews</span></a>
+            
+            <!-- Бургер-кнопка -->
+            <button class="burger-btn" id="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                    <li><a href="#add-review" class="nav-link">Добавить отзыв</a></li>
+                    <li><a href="#top-cars" class="nav-link">Топ автомобилей</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">🌓</button>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Честные отзывы об автомобилях</h1>
+            <p>Читайте реальные отзывы владельцев или делитесь своим опытом эксплуатации автомобиля</p>
+            <a href="#add-review" class="btn btn-accent">Оставить отзыв</a>
+        </div>
+    </section>
+
+    <section class="reviews-carousel">
+        <h2 class="section-title">Отзывы наших клиентов</h2>
+        <div class="carousel-container">
+            <div class="reviews-track" id="reviews-track">
+            </div>
+            <button class="carousel-btn prev-btn">❮</button>
+            <button class="carousel-btn next-btn">❯</button>
+        </div>
+        <div class="carousel-dots">
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="search-section">
+            <form class="search-form" id="search-form">
+                <input type="text" placeholder="Марка или модель автомобиля">
+                <select id="brand-filter">
+                    <option value="">Все марки</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+                <button type="submit" class="btn">Найти</button>
+            </form>
+        </section>
+        
+        <section class="reviews" id="reviews">
+            <h2 class="section-title">Последние отзывы</h2>
+            
+            <div class="review-list" id="review-list">
+                <!-- Отзывы будут добавляться через JS -->
+            </div>
+        </section>
+        
+        <section class="add-review" id="add-review">
+            <h2 class="section-title">Добавить отзыв</h2>
+            
+            <form class="review-form" id="review-form">
+                <div class="form-group">
+                    <label for="car-brand">Марка автомобиля</label>
+                    <select id="car-brand" required>
+                        <option value="">Выберите марку</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Kia">Kia</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="car-model">Модель автомобиля</label>
+                    <input type="text" id="car-model" required placeholder="Например: Camry, X5, Accord">
+                </div>
+                
+                <div class="form-group">
+                    <label for="car-year">Год выпуска</label>
+                    <input type="number" id="car-year" min="1990" max="2023" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="author">Ваше имя</label>
+                    <input type="text" id="author" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Оценка</label>
+                    <div class="stars" id="rating-stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" value="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text">Ваш отзыв</label>
+                    <textarea id="review-text" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">Теги (через запятую)</label>
+                    <input type="text" id="tags" placeholder="Например: надежность, комфорт, экономичность">
+                </div>
+                
+                <button type="submit" class="btn btn-accent">Опубликовать отзыв</button>
+            </form>
+        </section>
+        
+        <section class="top-cars" id="top-cars">
+            <h2 class="section-title">Топ автомобилей</h2>
+            <div class="top-list" id="top-list">
+                <!-- Топ автомобилей будет генерироваться через JS -->
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <section id="contacts" class="contacts">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <a href="tel:+375447513692" class="contact-link">+375 (44) 751 36 92</a>
+                        <a href="https://maps.google.com/?q=Москва,+ул.+Автолюбителей,+1" target="_blank" class="contact-link">
+                            г. Москва, ул. Автолюбителей, 1
+                        </a>
+                    </div>
+
+            </section>
+            <p>&copy; 2025 AutoReviews. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
