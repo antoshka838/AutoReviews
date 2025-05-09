@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoReviews - Отзывы об автомобилях</title>
+    <link rel="icon" href="free-icon-font-comment-alt-3916610.svg" type="free-icon-font-comment-alt-3916610">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +12,6 @@
         <div class="container header-content">
             <a href="#" class="logo">Auto<span>Reviews</span></a>
             
-            <!-- Бургер-кнопка -->
             <button class="burger-btn" id="burger-btn">
                 <span></span>
                 <span></span>
@@ -26,7 +26,10 @@
                     <li><a href="#contacts" class="nav-link">Контакты</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle" class="theme-toggle">🌓</button>
+             <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
         </div>
     </header>
     
@@ -71,7 +74,6 @@
             <h2 class="section-title">Последние отзывы</h2>
             
             <div class="review-list" id="review-list">
-                <!-- Отзывы будут добавляться через JS -->
             </div>
         </section>
         
@@ -140,7 +142,6 @@
         <section class="top-cars" id="top-cars">
             <h2 class="section-title">Топ автомобилей</h2>
             <div class="top-list" id="top-list">
-                <!-- Топ автомобилей будет генерироваться через JS -->
             </div>
         </section>
     </div>
